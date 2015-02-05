@@ -17,7 +17,7 @@
 
 (defn bootlaces!
   [version]
-  (set-env! :resource-paths #(conj % "src"))
+  (set-env! :resource-paths #(into % (get-env :source-paths)))
   (task-options!
     push #(into % (merge {:repo "deploy-clojars" :ensure-version version}
                          (when +last-commit+ {:ensure-clean  true

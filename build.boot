@@ -6,7 +6,7 @@
 (require '[boot.git :refer [last-commit]]
          '[adzerk.bootlaces :refer :all])
 
-(def +version+ "0.1.9")
+(def +version+ "0.1.10")
 
 (bootlaces! +version+)
 
