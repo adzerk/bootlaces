@@ -21,7 +21,7 @@
 (defn bootlaces!
   [version & {:keys [dev-dependencies dont-modify-paths?]}]
   (when-not dont-modify-paths?
-    (merge-env! :resource-paths #{"src"}))
+    (merge-env! :resource-paths (get-env :soure-paths)))
   (when dev-dependencies
     (->> dev-dependencies
          assert-edn-resource
